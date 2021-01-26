@@ -15,7 +15,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "concurrency1.4", "concurren
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "concurrency1.5", "concurrency1.5\concurrency1.5.vcxproj", "{F1DC5340-2B20-412F-B5E4-1D08735B74C9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "concurrency1.6", "concurrency1.6\concurrency1.6.vcxproj", "{E3164D20-9DCB-4735-B0FE-C709C2678F6B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw", "concurrency1.6\concurrency1.6.vcxproj", "{E3164D20-9DCB-4735-B0FE-C709C2678F6B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tmp", "tmp\tmp.vcxproj", "{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{E3164D20-9DCB-4735-B0FE-C709C2678F6B}.Release|x64.Build.0 = Release|x64
 		{E3164D20-9DCB-4735-B0FE-C709C2678F6B}.Release|x86.ActiveCfg = Release|Win32
 		{E3164D20-9DCB-4735-B0FE-C709C2678F6B}.Release|x86.Build.0 = Release|Win32
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Debug|x64.ActiveCfg = Debug|x64
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Debug|x64.Build.0 = Debug|x64
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Debug|x86.ActiveCfg = Debug|Win32
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Debug|x86.Build.0 = Debug|Win32
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Release|x64.ActiveCfg = Release|x64
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Release|x64.Build.0 = Release|x64
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Release|x86.ActiveCfg = Release|Win32
+		{E7EECD19-F97B-447C-A9EC-7A13BB8FAD90}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
