@@ -1,36 +1,48 @@
 #include <thread>
 #include <iostream>
 #include <string>
-#include <functional>
+/* Passing parameters to threads
+*/
 
-// replace EXAMPLE1 by EXAMPLE2 to run the second example
-#define EXAMPLE1
-
-#ifdef EXAMPLE1
 void threadf(std::string s) {
 	std::cout << s << std::endl;
 }
-#endif 
-#ifdef EXAMPLE2
-void threadf(int& x) {
+
+/* parameter by reference*/
+void threadr(int& x) {
 	x = 17;
 }
-#endif 
 
+struct foo {
+	int& _x;
+	foo(int& x) :_x(x) {}
+	void operator()() {
+		_x = 19;
+	}
+};
 
 int main()
 {	
 	int x = 12;
+	
+	std::thread t1(threadf, "hello thread");
 	/* internally the thread constructor passes values
 	* as rvalue references*/
-#ifdef EXAMPLE1
-	std::thread t(threadf, "hello thread");
-#endif
-#ifdef EXAMPLE2
-	std::thread t(threadf, std::ref(x));
-#endif 
-	t.join();
-#ifdef EXAMPLE2
+
+	// this does not compile
+	//std::thread t2(threadr, x);
+
+	std::thread t2(threadr, std::ref(x));
+	t2.join();
 	std::cout << x << std::endl;
-#endif 
+
+	/*a different way would be to create 
+	* a function object that contains a 
+	* reference to x
+	*/
+	std::thread t3(foo{ x });
+	t1.join();
+	t3.join();
+	std::cout << x << std::endl;
+
 }
