@@ -208,7 +208,7 @@
     <ClCompile Include="concurrency1.5.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\utility.h" />
+    <ClInclude Include="..\include\utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

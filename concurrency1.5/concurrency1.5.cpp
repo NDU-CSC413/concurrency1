@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <vector>
 #include <numeric>
-#include "../../include/utility.h"
+#include "../include/utility.h"
 using Long = unsigned long long;
 
 /* assume the vector size is a power of 2 */
@@ -47,7 +47,7 @@ T parallel_acc(Iter first, Iter last, T init,Func f) {
 }
 int main()
 {
-	const int  n = 1<<23;
+	const int  n = 1<<25;
 	std::vector<double> v(n);
 	std::fill_n(v.begin(), n, 1.0);
 	Duration d;

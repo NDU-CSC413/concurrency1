@@ -93,7 +93,7 @@ int main()
 		t.join();
 	end = std::chrono::high_resolution_clock::now();
 	print_duration(start, end, "multiple threads");
-	constexpr auto identity = [](auto r) {return r; };
+	auto identity = [](auto r) {return r; };
 	/* combine the results of blocks */
 	std::cout<<"multiple thread result "<<
 		std::any_of(results.begin(), results.end(),

@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <thread>
 #include <chrono>
 void read_input() {
