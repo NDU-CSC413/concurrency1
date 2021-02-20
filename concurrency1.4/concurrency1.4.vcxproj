@@ -32,6 +32,7 @@
     <ProjectGuid>{2da997af-3b68-4d5b-9c1c-955820d9fad0}</ProjectGuid>
     <RootNamespace>concurrency14</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>concurrency1-4</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

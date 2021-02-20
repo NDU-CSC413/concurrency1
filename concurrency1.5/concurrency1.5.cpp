@@ -15,12 +15,12 @@
 using Long = unsigned long long;
 
 /* assume the vector size is a power of 2 */
-template <typename Iter,typename T,typename Func>
+template <int NUMT=0,typename Iter,typename T,typename Func>
 T parallel_acc(Iter first, Iter last, T init,Func f) {
 	Long const length = std::distance(first, last);
 	
-	//Long num_threads = std::thread::hardware_concurrency();
-	Long num_threads = 2;
+	Long num_threads = NUMT==0?std::thread::hardware_concurrency():NUMT;
+	std::cout << "Number of threads = " << num_threads << "\n";
 	Long block_size = length / num_threads;
 	std::vector<T> results(num_threads ) ;
 	std::vector<std::thread> threads(num_threads );
@@ -30,10 +30,7 @@ T parallel_acc(Iter first, Iter last, T init,Func f) {
 		block_end = first+(i+1)*block_size;
 		threads[i] = std::thread(
 			[=](Iter s, Iter e, T& r) {
-				r = std::accumulate(s, e, 0.0,f
-				//,	[](double acc,T x) {return acc+=1.0 / (1.0 + x * x); }
-				);
-			
+				r = std::accumulate(s, e, 0.0,f);
 			},
 			block_start,block_end,std::ref(results[i])
 		);
@@ -53,7 +50,7 @@ int main()
 	Duration d;
 	double r;
 	TIMEIT(d
-		,r=parallel_acc(v.begin(), v.end(), 0.0
+		,r=parallel_acc<8>(v.begin(), v.end(), 0.0
 			, [](double acc, double val) {return acc += 1.0 / (1 + val * val); }
 		);
 	)
