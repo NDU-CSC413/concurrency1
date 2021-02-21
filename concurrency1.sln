@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tmp", "tmp\tmp.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "concurrency1-6", "concurrency1.6\concurrency1.6.vcxproj", "{E3164D20-9DCB-4735-B0FE-C709C2678F6B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "concurrency1-45", "concurrency1-45\concurrency1-45.vcxproj", "{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		custom|x64 = custom|x64
@@ -195,6 +197,18 @@ Global
 		{E3164D20-9DCB-4735-B0FE-C709C2678F6B}.Release|x64.Build.0 = Release|x64
 		{E3164D20-9DCB-4735-B0FE-C709C2678F6B}.Release|x86.ActiveCfg = Release|Win32
 		{E3164D20-9DCB-4735-B0FE-C709C2678F6B}.Release|x86.Build.0 = Release|Win32
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.custom|x64.ActiveCfg = Debug|x64
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.custom|x64.Build.0 = Debug|x64
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.custom|x86.ActiveCfg = Debug|Win32
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.custom|x86.Build.0 = Debug|Win32
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Debug|x64.ActiveCfg = Debug|x64
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Debug|x64.Build.0 = Debug|x64
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Debug|x86.ActiveCfg = Debug|Win32
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Debug|x86.Build.0 = Debug|Win32
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Release|x64.ActiveCfg = Release|x64
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Release|x64.Build.0 = Release|x64
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Release|x86.ActiveCfg = Release|Win32
+		{874A5CB2-2AD0-4BB1-A4CD-8BD2FC76AE79}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
