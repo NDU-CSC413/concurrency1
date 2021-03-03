@@ -8,19 +8,16 @@
 #include <iostream>
 #include <thread>
 #include <iomanip>
-#include <mutex>
 #include <vector>
 #include "../include/utility.h"
 
-std::mutex m;
-#define VER2
 void helper(double stepsize,int from,int to,double& res) {
 	double sum = 0, midpoint;
 	for (int i = from; i < to; ++i) {
 		midpoint = (i + 0.5) *stepsize;
 		sum += 1.0 / (1 + midpoint * midpoint);
 	}
-	std::lock_guard<std::mutex> g(m);
+	
 	res += 4.0 *stepsize * sum;
 }
 template<int hard_t=2>
@@ -35,25 +32,18 @@ void par_pi(int pow, double& pi) {
 		mythreads.push_back(
 			std::thread(
 				helper, dx, t * block_size, (t + 1) * block_size
-#ifdef VER1
 				,std::ref(results[t])
-#else
-				, std::ref(pi)
-#endif 
 			)
 		);
 	}
 	
 	for (auto& t : mythreads)t.join();
-#ifdef VER1
-	pi = 0;
+
 	for (int i = 0; i < hard_t; ++i)
 		pi += results[i];
-#endif // VER1
 
 }
 
-	
 void seq_pi(int pow,double& pi) {
 	const int num_steps = 1 << pow;
 	helper(1.0 / num_steps, 0, num_steps, pi);
@@ -63,10 +53,17 @@ int main(){
 	
 	double pi = 0;
 	Duration d;
+	std::cout << "Strat\t PI\t duration\n";
+	std::cout << std::setprecision(7);
+
+	TIMEIT(d
+		, seq_pi(28, pi);
+	)
+
+	std::cout << "Seq\t " <<pi<<"\t"<< d.count() << "\n";
 	TIMEIT(d
 		, par_pi<8>(28, pi);
 	)
-	std::cout <<std::setprecision(20) << pi << "\n";
-	std::cout << d.count() << "\n";
+	std::cout << "Par\t " << pi << "\t" << d.count() << "\n";
 
 }
